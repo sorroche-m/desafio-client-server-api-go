@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  sqlite:
+    image: nouchka/sqlite3
+    container_name: sqlite
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data:/data
+    command: sqlite3 /data/sqlite.db
